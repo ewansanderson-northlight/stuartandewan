@@ -18,9 +18,13 @@ function getOrCreateSheet_() {
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = spreadsheet.insertSheet(SHEET_NAME);
-    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#315e61').setFontColor('#ffffff');
     sheet.setFrozenRows(1); sheet.autoResizeColumns(1, HEADERS.length);
   }
+  const currentHeaders = sheet.getRange(1, 1, 1, HEADERS.length).getValues()[0];
+  if (currentHeaders[2] !== 'Attendees') sheet.insertColumnsBefore(3, 2);
+  sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+  sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#315e61').setFontColor('#ffffff');
   return sheet;
 }
+
+function migrateGuestInterestSheet() { getOrCreateSheet_(); }

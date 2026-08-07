@@ -2,14 +2,14 @@
    Execute as: Me. Who has access: Anyone. */
 const SPREADSHEET_ID = '14MrafqjgL_m9RR5uGzYnLFT3TuWAEcPFwchpbLUFURQ';
 const SHEET_NAME = 'Guest interest';
-const HEADERS = ['Submitted at', 'Name', 'Email', 'Postal address', 'WhatsApp number', 'Children attending?', 'Likely to attend?'];
+const HEADERS = ['Submitted at', 'Name', 'Attendees', 'Plus-one name', 'Email', 'Postal address', 'WhatsApp number', 'Children attending?', 'Likely to attend?'];
 
 function doGet() { return ContentService.createTextOutput('Wedding guest-interest endpoint is ready.'); }
 
 function doPost(e) {
   const sheet = getOrCreateSheet_();
   const fields = e.parameter;
-  sheet.appendRow([fields.submittedAt || new Date().toISOString(), fields.name || '', fields.email || '', fields.address || '', fields.phone || '', fields.childrenAttending || '', fields.attendance || '']);
+  sheet.appendRow([fields.submittedAt || new Date().toISOString(), fields.name || '', fields.attendees || '', fields.plusOneName || '', fields.email || '', fields.address || '', fields.phone || '', fields.childrenAttending || '', fields.attendance || '']);
   return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
 }
 

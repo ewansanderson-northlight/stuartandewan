@@ -47,28 +47,10 @@
       .event-day,.event-time { font:500 11px 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.08em; }
       .event h3 { font-size:clamp(28px,3.4vw,50px); margin:0; letter-spacing:-.03em; }
       .event-time { color:var(--sea); text-align:right; }
-      .form-section { padding:12vw 9vw; display:grid; grid-template-columns:.85fr 1.15fr; gap:9vw; align-items:start; }
-      .form-section h2 { margin:14px 0 26px; }
-      .contact { font-size:14px; line-height:1.7; }
-      .contact a { color:var(--sea); }
-      form { background:var(--ink); color:white; padding:clamp(26px,5vw,60px); }
-      form > p { margin:0 0 30px; font:16px/1.55 Manrope,sans-serif; color:#e2e8df; }
-      .fields { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-      label { display:block; font:500 10px 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.1em; }
-      label small { display:block; margin-top:7px; color:#d4ddd5; font:400 11px/1.4 Manrope,sans-serif; letter-spacing:0; text-transform:none; }
-      input,textarea,select { appearance:none; border:0; border-radius:0; border-bottom:1px solid rgba(255,255,255,.5); background:transparent; color:white; width:100%; padding:11px 0; margin-top:6px; font:15px Manrope,sans-serif; outline:none; }
-      textarea { resize:vertical; min-height:74px; }
-      input:focus,textarea:focus,select:focus { border-color:var(--sun); }
-      option { color:var(--ink); }
-      .full { grid-column:1/-1; }
-      button { border:0; margin-top:35px; padding:16px 24px; background:var(--sun); color:var(--ink); font:700 11px 'DM Mono',monospace; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
-      .form-note { margin:16px 0 0; color:#d4ddd5; font-size:12px; line-height:1.5; }
-      .admin { display:none; margin-top:18px; border:1px solid rgba(255,255,255,.35); background:transparent; color:white; padding:12px 16px; }
-      .admin.visible { display:inline-block; }
       footer { background:var(--coral); color:var(--ink); padding:44px 9vw; display:flex; justify-content:space-between; align-items:center; }
       footer h2 { font-size:clamp(38px,5vw,64px); }
       footer a { color:inherit; font:500 12px 'DM Mono',monospace; }
-      @media(max-width:700px) { .hero-content{padding:7vh 7vw;} .scroll{display:none}.intro,.form-section,.details{grid-template-columns:1fr; padding:18vw 7vw; gap:36px}.photos{padding:0 4vw 18vw;grid-template-rows:250px 170px;gap:8px}.weekend{padding:18vw 7vw}.weekend header{display:block;margin-bottom:40px}.weekend .section-tag{display:block;margin-top:25px}.event{grid-template-columns:1fr auto;gap:8px}.event h3{grid-column:1/-1;grid-row:2}.fields{grid-template-columns:1fr}.full{grid-column:auto}footer{padding:32px 7vw;display:block}footer a{display:block;margin-top:22px} }
+      @media(max-width:700px) { .hero-content{padding:7vh 7vw;} .scroll{display:none}.intro,.details{grid-template-columns:1fr; padding:18vw 7vw; gap:36px}.photos{padding:0 4vw 18vw;grid-template-rows:250px 170px;gap:8px}.weekend{padding:18vw 7vw}.weekend header{display:block;margin-bottom:40px}.weekend .section-tag{display:block;margin-top:25px}.event{grid-template-columns:1fr auto;gap:8px}.event h3{grid-column:1/-1;grid-row:2}footer{padding:32px 7vw;display:block}footer a{display:block;margin-top:22px} }
     </style>
   </head>
   <body>
@@ -76,27 +58,14 @@
       <section class="hero">
         <video autoplay muted loop playsinline aria-label="A glimpse of our venue"><source src="BD14F6C8-9707-4B19-8D70-278D3C9201B0.mov" /></video>
         <div class="shade"></div>
-        <nav><span>Stuart & Ewan</span><a href="#interest">Let us know</a></nav>
+        <nav><span>Stuart & Ewan</span><a href="#weekend">The weekend</a></nav>
         <div class="hero-content"><p class="eyebrow">Our wedding weekend</p><h1>Stuart<br><em>&</em> Ewan</h1><div class="hero-bottom"><p>We’re getting married — and would love to celebrate a beautiful few days with our <strong>favourite people</strong>.</p><span class="date">2 October 2027<br>Rhodes, Greece</span><span class="scroll">Scroll to explore</span></div></div>
       </section>
-      <section class="intro"><h2>A little Rhodes escape.</h2><p>Mamma Mia, we’re getting married in Rhodes! So naturally, we’re turning it into a weekend of sun, sea, Greek food, questionable dancing and one fairly important “I do”. This isn’t the formal invite just yet, but we would love to gauge interest.</p></section>
+      <section class="intro"><h2>A little Rhodes escape.</h2><p>Mamma Mia, we’re getting married in Rhodes! So naturally, we’re turning it into a weekend of sun, sea, Greek food, questionable dancing and one fairly important “I do”.</p></section>
       <section class="photos" aria-label="Stuart and Ewan"><img src="IMG_9929.jpeg" alt="Stuart and Ewan at a summer festival" /><img src="IMG_9052.jpg" alt="A walk along a sunlit beach" /><img src="IMG_0558.jpeg" alt="Stuart and Ewan together on a pier at sunset" /></section>
       <section class="details"><div><span class="section-tag">Save the date</span><h2>2 October<br>2027</h2></div><p>Rhodes, Greece<br><br>The wedding will be at <a href="https://kaminarivillage.gr/contact/" target="_blank" rel="noreferrer">Kaminari Village</a><br>35th km Rodos–Lindos Avenue<br><br>Other weekend locations will be confirmed by October 2026.</p></section>
       <section class="weekend" id="weekend"><header><h2>The plan<br>for the weekend</h2><span class="section-tag">More details by October 2026</span></header><div class="schedule"><article class="event"><span class="event-day">Friday</span><h3>Welcome drinks in Lindos Old Town</h3><span class="event-time">5pm</span></article><article class="event"><span class="event-day">Saturday</span><h3>The wedding at Kaminari Village</h3><span class="event-time">1:30pm — 2am</span></article><article class="event"><span class="event-day">Sunday</span><h3>Beach day + beach bar</h3><span class="event-time">1pm onwards — TBD</span></article></div></section>
-      <section class="form-section" id="interest"><div><span class="section-tag">Early interest</span><h2>Could you<br>join us?</h2><p class="contact">This isn’t a final RSVP — it simply helps us plan and make sure nobody gets missed when invitations go out.<br><br>Questions? <a href="mailto:stuart.and.ewan@gmail.com">stuart.and.ewan@gmail.com</a></p></div><form id="interest-form"><p>Please complete to get more information.</p><div class="fields"><label>Full name<input required name="name" autocomplete="name" placeholder="Your name" /></label><label>How many of you?<select required name="attendees" id="attendees"><option value="" disabled selected>Select an option</option><option value="1">Just me</option><option value="2">Me + 1</option></select></label><label class="full" id="plus-one-field" style="display:none"><span>Plus-one's full name</span><input name="plusOneName" placeholder="Their name" /></label><label>Email address<input required name="email" type="email" autocomplete="email" placeholder="you@example.com" /></label><label>WhatsApp number<input required name="phone" type="tel" autocomplete="tel" placeholder="Include country code" /></label><label>Will children be attending?<select required name="childrenAttending"><option value="" disabled selected>Select an option</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></label><label class="full">Postal address<textarea required name="address" autocomplete="street-address" placeholder="Where should we send your invite?"></textarea></label><label class="full">Do you think you can come?<small>Select “No” only if you don’t want any further information or a formal invitation.</small><select required name="attendance"><option value="" disabled selected>Select an option</option><option>Yes, we think so!</option><option>No — please don’t send further information or an invitation</option><option>Not sure yet</option></select></label></div><button type="submit">Register interest</button><p class="form-note" id="form-message">Your details will be added to our guest list.</p><button class="admin" type="button" id="download">Download interest list (CSV)</button></form></section>
     </main>
     <footer><h2>We hope you can make it!</h2><a href="mailto:stuart.and.ewan@gmail.com">stuart.and.ewan@gmail.com</a></footer>
-    <script>
-      // Paste the Web App URL from the accompanying Google Apps Script setup here.
-      const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycby0AxWzDw2R6gHpA7nRZamwa_3Zk47FjvTupruQ86G7WHI42mOBFqGlyukHKsjDLV9o7Q/exec';
-      const form = document.querySelector('#interest-form'), message = document.querySelector('#form-message'), download = document.querySelector('#download');
-      const attendees = document.querySelector('#attendees'), plusOneField = document.querySelector('#plus-one-field'), plusOneInput = plusOneField.querySelector('input');
-      attendees.addEventListener('change', () => { const showPlusOne = attendees.value === '2'; plusOneField.style.display = showPlusOne ? '' : 'none'; plusOneInput.required = showPlusOne; if (!showPlusOne) plusOneInput.value = ''; });
-      const getEntries = () => JSON.parse(localStorage.getItem('wedding-interest') || '[]');
-      const updateDownload = () => download.classList.toggle('visible', getEntries().length > 0);
-      form.addEventListener('submit', async (event) => { event.preventDefault(); const data = Object.fromEntries(new FormData(form)); data.submittedAt = new Date().toISOString(); try { if (!GOOGLE_SHEETS_WEB_APP_URL) throw new Error('No web app URL'); await fetch(GOOGLE_SHEETS_WEB_APP_URL, { method:'POST', mode:'no-cors', body:new URLSearchParams(data) }); message.textContent = 'Thank you — we’ve noted your interest. We can’t wait to celebrate with you.'; form.reset(); } catch (error) { localStorage.setItem('wedding-interest', JSON.stringify([...getEntries(), data])); form.reset(); message.textContent = 'Thank you — your details have been saved on this device while we connect the guest list.'; updateDownload(); } });
-      download.addEventListener('click', () => { const entries = getEntries(); const headings = ['submittedAt','name','attendees','plusOneName','email','address','phone','childrenAttending','attendance']; const quote = value => '"' + String(value || '').replaceAll('"','""') + '"'; const csv = [headings.join(','), ...entries.map(row => headings.map(key => quote(row[key])).join(','))].join('\n'); const url = URL.createObjectURL(new Blob([csv], {type:'text/csv'})); const link = Object.assign(document.createElement('a'), {href:url, download:'wedding-interest.csv'}); link.click(); URL.revokeObjectURL(url); });
-      updateDownload();
-    </script>
   </body>
 </html>

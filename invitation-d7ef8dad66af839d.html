@@ -254,7 +254,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
     }
     try { if(localStorage.getItem(storageKey) === 'saved') success(); } catch {}
     window.addEventListener('message', event => {
-      if(!/^https:\/\/(?:[a-z0-9-]+\.)?(?:script\.googleusercontent\.com|script\.google\.com)$/.test(event.origin)) return;
+      if(!/^https:\/\/(?:script\.google\.com|(?:[a-z0-9-]+\.)?script\.googleusercontent\.com|[a-z0-9-]+-script\.googleusercontent\.com)$/.test(event.origin)) return;
       if(!sending || event.data?.type !== 'wedding-rsvp-receipt' || event.data.id !== submissionId) return;
       if(event.data.ok) success();
       else {

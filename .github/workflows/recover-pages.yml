@@ -1,0 +1,26 @@
+name: Recover stuck Pages deployment
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/recover-pages.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Cancel the known stuck Pages deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployment = '4d1dcfcace1f3c380266d36d0e7cd04971efeee6';
+            const params = {owner: context.repo.owner, repo: context.repo.repo, pages_deployment_id: deployment};
+            const status = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}', params);
+            core.info('Pages deployment status: ' + status.data.status);
+            if (status.data.status !== 'succeed') {
+              const result = await github.request('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel', params);
+              core.info('Cancellation response: ' + result.status);
+            }

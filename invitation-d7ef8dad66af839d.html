@@ -140,7 +140,6 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
     </section>
     <section class="rsvp" id="rsvp"><div><p class="mono">RSVP by 30 November 2026</p><h3>Complete<br>our RSVP.</h3><p>We completely understand that Rhodes is a long way. If you can’t commit at this stage, we’ll find another lovely way to celebrate together.</p></div>
       <form id="rsvp-form">
-<p id="rsvp-availability" class="help">Online RSVP is being set up. For now, please <a href="mailto:stuart.and.ewan@gmail.com?subject=Wedding%20RSVP">email us your RSVP</a>.</p>
 <label>Your full name (lead booker)<input required name="name" maxlength="160" autocomplete="name" placeholder="Your full name"></label>
 <fieldset><legend>Will you be joining us?</legend><div class="choices"><label class="choice"><input required type="radio" name="attendance" value="yes">Yes, we’ll be there</label><label class="choice"><input required type="radio" name="attendance" value="no">Sadly, we can’t make it</label></div></fieldset>
 <div id="decline-message" class="decline-message" hidden><strong>We can’t wait to celebrate another way with you.</strong><p>Thank you for letting us know. Confirm your RSVP below.</p></div>
@@ -167,8 +166,6 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   <script>
     const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycby0AxWzDw2R6gHpA7nRZamwa_3Zk47FjvTupruQ86G7WHI42mOBFqGlyukHKsjDLV9o7Q/exec';
     // Enable after the existing Apps Script deployment has been upgraded and verified.
-    const RSVP_READY = true;
-    document.querySelector('#rsvp-availability').hidden = RSVP_READY;
     const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let isOpen = false, openingUntil = 0, touchY = 0;
     const envelope = document.querySelector('.envelope');
@@ -266,10 +263,6 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
     form.addEventListener('submit', event => {
       event.preventDefault();
       if(sending) return;
-      if(!RSVP_READY) {
-        message.textContent = 'Online RSVP is being set up. Please email stuart.and.ewan@gmail.com to confirm your response for now.';
-        message.focus(); return;
-      }
       const data = new FormData(form);
       data.set('formType', 'rsvp');
       data.set('submissionId', submissionId);
